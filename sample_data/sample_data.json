@@ -1,0 +1,18 @@
+{
+    "sorting" : "recent",
+    "page_number" : 1,
+    "content_list" : [
+        {
+            "uuid" : "test",
+            "title" : "Test",
+            "author" : "collie",
+            "date" : "2023-04-08-22-20(KST)",
+            "view_count" : 20,
+            "like_count" : 1,
+            "answer_count" : 2,
+            "tag" : [
+                "Test"
+            ]
+        }
+    ] 
+}

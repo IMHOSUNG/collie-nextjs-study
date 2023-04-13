@@ -25,29 +25,31 @@ export default function RootLayout({
     children: React.ReactNode;
   }) {
     return (
-      <html lang="en" className="">
+      <html lang="en">
         <head>
             <title>Xops Board</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         </head>
-        <body className="bg-white dark:bg-gray-900 overflow-y-contain overflow-x-hidden">
+        <body className="overflow-x-hidden bg-white h-max dark:bg-gray-900 overflow-y-contain">
             <header className="sticky top-0 z-30 w-full">
               <NavBar></NavBar>
             </header>
-            <div className='hidden lg:block relative h-40 bg-gray-800'>
+            <div className='relative hidden h-40 bg-gray-800 lg:block'>
               image
             </div>
             
-            <div className='bg-blue-100 container flex flex-nowrap flex-row mx-auto max-w-7xl justify-center h-screen '>
-              <div className="hidden flex-none sticky top-1/4 h-min md:block md:w-44">
+            <div className='flex flex-row justify-center mx-auto bg-blue-100 flex-nowrap max-w-7xl '>
+              <div className="sticky flex-none hidden w-auto h-full top-10 md:block md:w-44">
                 <Aside/>
               </div>
-              <div className="basis-full bg-blue-300">
+              <div className="bg-blue-300 basis-full">
                 {children}
               </div>
-              <div className="hidden lg:flex lg:basis-6/12 bg-blue-400">
+              <div className="hidden bg-blue-400 lg:flex lg:basis-6/12">
                 <News/>
               </div>
-            </div>       
+            </div>
+                
         </body>
       </html>
     );

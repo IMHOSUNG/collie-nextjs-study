@@ -25,7 +25,7 @@ export default async function Home({ content_list }: Props) {
 
   return (
     <>
-      <div className="m-2 h-80 bg-red-100 border-2 border-black">
+      <div className="m-2 bg-red-100 border-2 border-black">
         <ContentCard/>
         <ContentCard/>
         <ContentCard/>

@@ -1,10 +1,10 @@
 const ContentCard = () => {
 
   return (
-    <div className="border border-gray-600 rounded-l m-2">
+    <div className="m-2 border border-gray-600 rounded-l">
       <div className="flex items-center gap-3 p-2 m-2">
         <div data-popover id="popover-user-profile" role="tooltip"
-          className="absolute z-10 invisible inline-block w-64 text-sm font-light text-gray-50 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-50 dark:bg-gray-800 dark:border-gray-600">
+          className="absolute z-10 invisible inline-block w-64 text-sm font-light transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 text-gray-50 dark:text-gray-50 dark:bg-gray-800 dark:border-gray-600">
           <div className="p-3">
             <div className="flex items-center justify-between mb-2">
                 <div>
@@ -36,18 +36,18 @@ const ContentCard = () => {
           </div>
           <div data-popper-arrow></div>
         </div>
-        <h3 className="text-black text-sm dark:text-gray-50">
+        <h3 className="text-sm text-black dark:text-gray-50">
           <a className="text-black hover:text-blue-400"href="">vikaskumarsingh20</a> 
             &nbsp; starred 4 repositories · last month
         </h3>
       </div>
       <div className="m-2 p-4 rounded border border-gray-700 bg-gray-50 dark:bg-[#0d1117]">
-        <div className="flex justify-between items-center">
-          <a className="text-black font-bold hover:text-blue-400" href="#">vikaskumarsingh20/Sudoku-Solver</a>
+        <div className="flex items-center justify-between">
+          <a className="font-bold text-black hover:text-blue-400" href="#">vikaskumarsingh20/Sudoku-Solver</a>
         </div>
         <p className="text-sm text-black">This is sudoku solver project, written wholly in C++, which solve,
           validate and Sudoku Puzzles!</p>
-        <div className="mt-3 flex items-center gap-5">
+        <div className="flex items-center gap-5 mt-3">
           <p className="text-sm text-black">🔴 C++</p>
           <a href="#" className="text-sm text-black">⭐ 2</a>
           <p className="text-sm text-black">Updated Feb 9</p>

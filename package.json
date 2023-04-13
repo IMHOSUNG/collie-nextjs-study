@@ -1,21 +1,20 @@
 {
-  "name": "nextjs-subscription-payments",
+  "name": "collie-nextjs-study",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "stripe:listen": "stripe listen --forward-to=localhost:3000/api/webhooks --project-name=saas-starter"
+    "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.17",
     "classnames": "^2.3.2",
     "next": "^13.2.3",
     "next-auth": "^4.21.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-merge-refs": "^2.0.1",
-    "stripe": "^11.13.0",
     "swr": "^2.0.4",
     "tailwindcss": "^3.2.7"
   },
@@ -24,7 +23,8 @@
     "@types/react": "^18.0.28",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.7",
+    "prettier-plugin-tailwindcss": "^0.2.7",
     "typescript": "^4.9.5"
   },
   "prettier": {

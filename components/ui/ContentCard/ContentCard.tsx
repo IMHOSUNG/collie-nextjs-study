@@ -1,142 +1,57 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-
-import Logo from '@/components/icons/Logo';
-
-import s from './Navbar.module.css';
-
 const ContentCard = () => {
-  const router = useRouter();
 
   return (
-    <div>
-      <div className="w-full lg:max-w-full lg:flex text-zinc-900">
-        <ul className="flex">
-          <li className="mr-6">
-            <a className="text-blue-500 hover:text-blue-800" href="#">Active</a>
-          </li>
-          <li className="mr-6">
-            <a className="text-blue-500 hover:text-blue-800" href="#">Link</a>
-          </li>
-          <li className="mr-6">
-            <a className="text-blue-500 hover:text-blue-800" href="#">Link</a>
-          </li>
-          <li className="mr-6">
-            <a className="text-gray-400 cursor-not-allowed" href="#">Disabled</a>
-          </li>
-        </ul>
-      </div>
-
-    
-      <div>
-        <ul>
-          <li className="ml-auto">
-          <div className="flex flex-col leading-normal bg-white border-b border-l border-r border-gray-400 rounded-b lg:border-l-0 lg:border-t lg:border-gray-400 lg:rounded-b-none lg:rounded-r">
-            <div>
-              <p className="flex items-center text-sm text-gray-600">
-                <svg className="w-3 h-3 mr-2 text-gray-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                </svg>
-                Members only
-              </p>
-              <div className="mb-2 text-xl font-bold text-gray-900">Can coffee make you a better developer?</div>
-              <p className="text-base text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-            </div>
-            <div className="flex items-center">
-              
-              <div className="text-sm">
-                <p className="leading-none text-gray-900">Jonathan Reinink</p>
-                <p className="text-gray-600">Aug 18</p>
-              </div>
-            </div>
-            </div>
-          </li>
-          <li className="ml-auto">
-          <div className="flex flex-col leading-normal bg-white border-b border-l border-r border-gray-400 rounded-b lg:border-l-0 lg:border-t lg:border-gray-400 lg:rounded-b-none lg:rounded-r">
-            <div>
-              <p className="flex items-center text-sm text-gray-600">
-                <svg className="w-3 h-3 mr-2 text-gray-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                </svg>
-                Members only
-              </p>
-              <div className="mb-2 text-xl font-bold text-gray-900">Can coffee make you a better developer?</div>
-              <p className="text-base text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-            </div>
-            <div className="flex items-center">
-              
-              <div className="text-sm">
-                <p className="leading-none text-gray-900">Jonathan Reinink</p>
-                <p className="text-gray-600">Aug 18</p>
-              </div>
-            </div>
-            </div>
-          </li>
-          <li className="ml-auto">
-          <div className="flex flex-col leading-normal bg-white border-b border-l border-r border-gray-400 rounded-b lg:border-l-0 lg:border-t lg:border-gray-400 lg:rounded-b-none lg:rounded-r">
-            <div>
-              <p className="flex items-center text-sm text-gray-600">
-                <svg className="w-3 h-3 mr-2 text-gray-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                </svg>
-                Members only
-              </p>
-              <div className="mb-2 text-xl font-bold text-gray-900">Can coffee make you a better developer?</div>
-              <p className="text-base text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-            </div>
-            <div className="flex items-center">
-              
-              <div className="text-sm">
-                <p className="leading-none text-gray-900">Jonathan Reinink</p>
-                <p className="text-gray-600">Aug 18</p>
-              </div>
-            </div>
-            </div>
-          </li>
-          <li className="ml-auto">
-          <div className="flex flex-col leading-normal bg-white border-b border-l border-r border-gray-400 rounded-b lg:border-l-0 lg:border-t lg:border-gray-400 lg:rounded-b-none lg:rounded-r">
-            <div>
-              <p className="flex items-center text-sm text-gray-600">
-                <svg className="w-3 h-3 mr-2 text-gray-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                </svg>
-                Members only
-              </p>
-              <div className="mb-2 text-xl font-bold text-gray-900">Can coffee make you a better developer?</div>
-              <p className="text-base text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-            </div>
-            <div className="flex items-center">
-              
-              <div className="text-sm">
-                <p className="leading-none text-gray-900">Jonathan Reinink</p>
-                <p className="text-gray-600">Aug 18</p>
-              </div>
-            </div>
-            </div>
-          </li>
-
-          <li className="ml-auto">
-            <div className="flex flex-col leading-normal bg-white border-b border-l border-r border-gray-400 rounded-b lg:border-l-0 lg:border-t lg:border-gray-400 lg:rounded-b-none lg:rounded-r">
-              <div>
-                <p className="flex items-center text-sm text-gray-600">
-                  <svg className="w-3 h-3 mr-2 text-gray-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                  </svg>
-                  Members only
-                </p>
-              <div className="mb-2 text-xl font-bold text-gray-900">Can coffee make you a better developer?</div>
-                <p className="text-base text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-              </div>
-              <div className="flex items-center">
-                
-                <div className="text-sm">
-                  <p className="leading-none text-gray-900">Jonathan Reinink</p>
-                  <p className="text-gray-600">Aug 18</p>
+    <div className="border border-gray-600 rounded-l m-2">
+      <div className="flex items-center gap-3 p-2 m-2">
+        <div data-popover id="popover-user-profile" role="tooltip"
+          className="absolute z-10 invisible inline-block w-64 text-sm font-light text-gray-50 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-50 dark:bg-gray-800 dark:border-gray-600">
+          <div className="p-3">
+            <div className="flex items-center justify-between mb-2">
+                <div>
+                  <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Follow</button>
                 </div>
-              </div>
             </div>
-          </li>
-        </ul>
+            <p className="text-base font-semibold leading-none text-gray-50 dark:text-white">
+              <a href="#">vikaskumarsingh20</a>
+            </p>
+            <p className="mb-3 text-sm font-normal">
+              <a href="#" className="hover:underline">@VikasKumarSingh</a>
+            </p>
+            <p className="mb-4 text-sm font-light">Open-source contributor. Building <a href="#"
+                className="text-blue-600 dark:text-blue-500 hover:underline">flowbite.com</a>.</p>
+            <ul className="flex text-sm font-light">
+              <li className="mr-2">
+                <a href="#" className="hover:underline">
+                  <span className="font-semibold text-gray-50 dark:text-white">799</span>
+                  <span>Following</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  <span className="font-semibold text-gray-50 dark:text-white">3,758</span>
+                  <span>Followers</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div data-popper-arrow></div>
+        </div>
+        <h3 className="text-black text-sm dark:text-gray-50">
+          <a className="text-black hover:text-blue-400"href="">vikaskumarsingh20</a> 
+            &nbsp; starred 4 repositories · last month
+        </h3>
+      </div>
+      <div className="m-2 p-4 rounded border border-gray-700 bg-gray-50 dark:bg-[#0d1117]">
+        <div className="flex justify-between items-center">
+          <a className="text-black font-bold hover:text-blue-400" href="#">vikaskumarsingh20/Sudoku-Solver</a>
+        </div>
+        <p className="text-sm text-black">This is sudoku solver project, written wholly in C++, which solve,
+          validate and Sudoku Puzzles!</p>
+        <div className="mt-3 flex items-center gap-5">
+          <p className="text-sm text-black">🔴 C++</p>
+          <a href="#" className="text-sm text-black">⭐ 2</a>
+          <p className="text-sm text-black">Updated Feb 9</p>
+        </div>
       </div>
     </div>
   );

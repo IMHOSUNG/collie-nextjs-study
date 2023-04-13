@@ -6,10 +6,14 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <meta property="og:title" content="XopsBoard" key="title" />
+          <meta name="description" content="question and answer board about devops"/>
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+        </Head>
         <body className="loading">
           <Main />
-          <NextScript />
+          <NextScript/>
         </body>
       </Html>
     );

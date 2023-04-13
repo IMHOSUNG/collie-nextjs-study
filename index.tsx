@@ -30,6 +30,8 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
 }
 
 export default function Home({ content_list }: Props) {
-  
-  return <ContentListComponent content_list={content_list} />;
+  // 라우터 처리
+  return (
+      <ContentListComponent content_list={content_list} />
+  );
 }

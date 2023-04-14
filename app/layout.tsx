@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import { AppProps } from 'next/app';
 import { Html, Head} from 'next/document';
-import NavBar from '../components/ui/Navbar';
-import Aside from '../components/ui/Aside';
-import News from '../components/ui/News'
-
+import NavBar from '@/components/ui/Navbar';
+import AsideBar from '@/components/ui/AsideBar';
+import News from '@/components/ui/News'
+import 'styles/main.css';
+import 'styles/chrome-bug.css';
+import { getAsideContentList } from '@/lib/Aside';
 
 // import Layout from '@/components/Layout';
 
@@ -15,15 +17,9 @@ import News from '../components/ui/News'
 
 // flex-none을 하면 고정 (flex가 먹혀있는 상태에선 미묘하게 크기가 변함) - 23.04.13
 
+const RootLayout = async({children}:{children:React.ReactElement}) => {
 
-import 'styles/main.css';
-import 'styles/chrome-bug.css';
-
-export default function RootLayout({
-    children,
-  }: {
-    children: React.ReactNode;
-  }) {
+    const aside = await getAsideContentList()
     return (
       <html lang="en">
         <head>
@@ -40,7 +36,7 @@ export default function RootLayout({
             
             <div className='flex flex-row justify-center mx-auto bg-blue-100 flex-nowrap max-w-7xl '>
               <div className="sticky flex-none hidden w-auto h-full top-10 md:block md:w-44">
-                <Aside/>
+                <AsideBar url_data={aside}/>
               </div>
               <div className="bg-blue-300 basis-full">
                 {children}
@@ -53,4 +49,8 @@ export default function RootLayout({
         </body>
       </html>
     );
-  }
+}
+
+
+export default RootLayout
+

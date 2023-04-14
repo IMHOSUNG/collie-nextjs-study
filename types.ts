@@ -24,4 +24,13 @@ export interface PageMeta {
     title: string;
     description: string;
     cardImage: string;
-  }
+}
+
+export interface AsideContent {
+    link_url:string,
+    name:string,
+}
+
+export interface AsideContentList {
+    content:AsideContent[]
+}

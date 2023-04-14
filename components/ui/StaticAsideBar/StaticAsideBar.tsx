@@ -6,7 +6,7 @@ import { getAsideContentList } from "@/lib/Aside";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-const AsideBar = ({url_data }: {url_data:AsideContentList}) => {
+const StaticAsideBar = ({url_data }: {url_data:AsideContentList}) => {
 
   const path = usePathname()
   const [showMe, setShowMe] = useState(true);
@@ -14,9 +14,11 @@ const AsideBar = ({url_data }: {url_data:AsideContentList}) => {
   const toggle = () => {
     setShowMe(!showMe)
   }
-  console.log(path)
+  
   return (
     
+    <div className={`
+                ${ path === '/' ? ( showMe === true ? "absolute block": "hidden") : "hidden" }`}>
       <aside className="p-2 m-2 break-all bg-gray-300" aria-label="Sidebar">
         <div className="h-full pt-4 px-3 pb-4 bg-gray-200 dark:bg-[#0d1117]">
           
@@ -47,8 +49,9 @@ const AsideBar = ({url_data }: {url_data:AsideContentList}) => {
         </div>
 
       </aside>
+    </div>
 
   );
 };
 
-export default AsideBar;
+export default StaticAsideBar;

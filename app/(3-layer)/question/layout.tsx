@@ -1,8 +1,9 @@
 import React from "react"
+import News from "@/components/ui/News"
 
 const Layout = ({children}:{children:React.ReactElement}) => {
     return (
-        <div className="m-2 bg-white border-2 border-black">
+        <div className="bg-blue-300">
             {children}
         </div>
     )

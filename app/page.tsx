@@ -28,6 +28,10 @@ export default async function Home({ content_list }: Props) {
         <ContentCard/>
         <ContentCard/>
         <ContentCard/>
+        <ContentCard/>
+        <ContentCard/>
+        <ContentCard/>
+        <ContentCard/>
       </div>
     </>
   );

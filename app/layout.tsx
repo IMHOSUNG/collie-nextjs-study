@@ -3,11 +3,12 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import { Html, Head} from 'next/document';
 import NavBar from '@/components/ui/Navbar';
-import AsideBar from '@/components/ui/AsideBar';
+import StaticAsideBar from '@/components/ui/StaticAsideBar';
 import News from '@/components/ui/News'
 import 'styles/main.css';
 import 'styles/chrome-bug.css';
 import { getAsideContentList } from '@/lib/Aside';
+import { usePathname } from 'next/navigation';
 
 // import Layout from '@/components/Layout';
 
@@ -17,9 +18,11 @@ import { getAsideContentList } from '@/lib/Aside';
 
 // flex-none을 하면 고정 (flex가 먹혀있는 상태에선 미묘하게 크기가 변함) - 23.04.13
 
+
 const RootLayout = async({children}:{children:React.ReactElement}) => {
 
-    const aside = await getAsideContentList()
+    const aside = await getAsideContentList()  
+    
     return (
       <html lang="en">
         <head>
@@ -29,20 +32,19 @@ const RootLayout = async({children}:{children:React.ReactElement}) => {
         <body className="overflow-x-hidden bg-white h-max dark:bg-gray-900 overflow-y-contain">
             <header className="sticky top-0 z-30 w-full">
               <NavBar></NavBar>
+              <div className="w-fit">
+               <StaticAsideBar url_data={aside}/>
+              </div>
             </header>
+
             <div className='relative hidden h-40 bg-gray-800 lg:block'>
               image
             </div>
             
             <div className='flex flex-row justify-center mx-auto bg-blue-100 flex-nowrap max-w-7xl '>
-              <div className="sticky flex-none hidden w-auto h-full top-10 md:block md:w-44">
-                <AsideBar url_data={aside}/>
-              </div>
-              <div className="bg-blue-300 basis-full">
+
+              <div className="basis-full">
                 {children}
-              </div>
-              <div className="hidden bg-blue-400 lg:flex lg:basis-6/12">
-                <News/>
               </div>
             </div>
                 

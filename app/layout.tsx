@@ -1,9 +1,7 @@
-import { useEffect, useState } from 'react';
 import React from 'react';
 import { AppProps } from 'next/app';
 import { Html, Head} from 'next/document';
 import NavBar from '@/components/ui/Navbar';
-import StaticAsideBar from '@/components/ui/StaticAsideBar';
 import News from '@/components/ui/News'
 import 'styles/main.css';
 import 'styles/chrome-bug.css';
@@ -31,10 +29,7 @@ const RootLayout = async({children}:{children:React.ReactElement}) => {
         </head>
         <body className="overflow-x-hidden bg-white h-max dark:bg-gray-900 overflow-y-contain">
             <header className="sticky top-0 z-30 w-full">
-              <NavBar></NavBar>
-              <div className="w-fit">
-               <StaticAsideBar url_data={aside}/>
-              </div>
+              <NavBar url_data={aside}></NavBar>
             </header>
 
             <div className='relative hidden h-40 bg-gray-800 lg:block'>

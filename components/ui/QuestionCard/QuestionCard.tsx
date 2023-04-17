@@ -1,6 +1,10 @@
-const QuestionCard = () => {
+import { QuestionContent } from "@/types";
+import Link from "next/link";
+
+const QuestionCard = ({data}:{data:QuestionContent}) => {
 
   return (
+    <>
     <div className="m-2 border border-gray-900 rounded-l">
       <div className="flex items-center gap-3 p-2 m-2">
         <div data-popover id="popover-user-profile" role="tooltip"
@@ -41,19 +45,22 @@ const QuestionCard = () => {
             &nbsp; starred 4 repositories · last month
         </h3>
       </div>
-      <div className="m-2 p-4 rounded border border-gray-700 bg-gray-50 dark:bg-[#0d1117]">
-        <div className="flex items-center justify-between">
-          <a className="font-bold text-black hover:text-blue-400" href="#">vikaskumarsingh20/Sudoku-Solver</a>
+      
+        <div className="m-2 p-4 rounded border border-gray-700 bg-gray-50 dark:bg-[#0d1117]">
+          <div className="flex items-center justify-between">
+            <a className="font-bold text-black hover:text-blue-400" href={"/question/"+data.question_uuid}>vikaskumarsingh20/Sudoku-Solver</a>
+          </div>
+          <p className="text-sm text-black">This is sudoku solver project, written wholly in C++, which solve,
+            validate and Sudoku Puzzles!</p>
+          <div className="flex items-center gap-5 mt-3">
+            <p className="text-sm text-black">🔴 C++</p>
+            <a href="#" className="text-sm text-black">⭐ 2</a>
+            <p className="text-sm text-black">Updated Feb 9</p>
+          </div>
         </div>
-        <p className="text-sm text-black">This is sudoku solver project, written wholly in C++, which solve,
-          validate and Sudoku Puzzles!</p>
-        <div className="flex items-center gap-5 mt-3">
-          <p className="text-sm text-black">🔴 C++</p>
-          <a href="#" className="text-sm text-black">⭐ 2</a>
-          <p className="text-sm text-black">Updated Feb 9</p>
-        </div>
-      </div>
+      
     </div>
+    </>
   );
 };
 

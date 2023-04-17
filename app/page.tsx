@@ -18,7 +18,7 @@ const getActiveProductsWithPrices = async(): Promise< ContentList > => {
 
 
 
-export default async function Home({ content_list }: Props) {
+export default async function Home({ }: Props) {
   // 라우터 처리
   const data  = await getActiveProductsWithPrices()
 

@@ -14,7 +14,7 @@ const AsideBar = ({url_data }: {url_data:AsideContentList}) => {
   const toggle = () => {
     setShowMe(!showMe)
   }
-  console.log(path)
+  
   return (
     
       <aside className="p-2 m-2 break-all bg-gray-300" aria-label="Sidebar">

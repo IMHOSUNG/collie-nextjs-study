@@ -34,3 +34,22 @@ export interface AsideContent {
 export interface AsideContentList {
     content:AsideContent[]
 }
+
+export interface AnswerContent {
+    recommend_count:Number
+    answer_block_uuid:string
+    author_picked:boolean
+    comment_blocks:string[]
+}
+
+export interface QuestionContent {
+    question_uuid:string
+    title:string
+    create_time:string
+    update_time:string
+    author:string
+    tags:string[]
+    question_block_uuid:string
+    best_answer_block_uuid:string
+    answer_block:AnswerContent[]
+}

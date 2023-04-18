@@ -8,3 +8,4 @@ export async function getQuestionContent ():Promise<QuestionContent> {
     const jsonData = await fsPromises.readFile(filePath + '/question_data.json', 'utf8');
     return JSON.parse(jsonData)
 }
+

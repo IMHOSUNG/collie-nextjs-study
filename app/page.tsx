@@ -3,9 +3,6 @@ import fsPromises  from 'fs/promises';
 import {Content, ContentList} from 'types';
 import ContentCard from '../components/ui/ContentCard'
 
-interface Props {
-  content_list: ContentList;
-}
 
 const getActiveProductsWithPrices = async(): Promise< ContentList > => {
   
@@ -17,8 +14,7 @@ const getActiveProductsWithPrices = async(): Promise< ContentList > => {
 }
 
 
-
-export default async function Home({ }: Props) {
+export default async function Home({ }) {
   // 라우터 처리
   const data  = await getActiveProductsWithPrices()
 

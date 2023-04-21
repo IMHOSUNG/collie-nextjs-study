@@ -7,6 +7,8 @@ import 'styles/main.css';
 import 'styles/chrome-bug.css';
 import { getAsideContentList } from '@/lib/Aside';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+import banner from '@/public/banner.jpg'
 
 // import Layout from '@/components/Layout';
 
@@ -33,7 +35,7 @@ const RootLayout = async({children}:{children:React.ReactElement}) => {
             </header>
 
             <div className='relative hidden h-40 bg-gray-800 lg:block'>
-              image
+              <Image src={banner} alt={''} fill/>
             </div>
             
             <div className='flex flex-row justify-center mx-auto bg-blue-100 flex-nowrap max-w-7xl '>

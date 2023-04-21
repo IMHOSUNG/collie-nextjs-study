@@ -11,6 +11,10 @@
         {
             "link_url" : "/users",
             "name": "Users"
+        },
+        {
+            "link_url" : "/post",
+            "name": "Post"
         }
     ]
 }

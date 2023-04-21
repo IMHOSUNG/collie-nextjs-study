@@ -53,3 +53,5 @@ export interface QuestionContent {
     best_answer_block_uuid:string
     answer_block:AnswerContent[]
 }
+
+export const SERVER_PATH = process.env.SERVER_PATH

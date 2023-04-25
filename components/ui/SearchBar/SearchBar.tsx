@@ -8,6 +8,9 @@ interface Props<T> {
     value?:string
 }
 
+function test () {
+    console.log("test")
+}
 type changeHandler = React.ChangeEventHandler<HTMLInputElement>
 
 const SearchBar = <T extends object>({
@@ -62,7 +65,7 @@ const SearchBar = <T extends object>({
     }
 
     useEffect(()=>{
-        if(!resultContainer.current) return;
+        if(!resultContainer.current) return ;
 
         resultContainer.current.scrollIntoView({
             block: "center",
@@ -79,16 +82,18 @@ const SearchBar = <T extends object>({
         if(value) setDefaultValue(value)
     },[value])
 
+    // Clicked 보다 MouseDown이 먼저 끝나기 때문에
+    // Mouse Down을 같이 넣어줘야 함 - 행동순서 확인하기...
     return (
     <>
             <form className="flex basis-10/12">
-            <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div tabIndex={1} onBlur={resetSearchComplete} onKeyDown={handleKeyDown} className="relative w-full m-4">
             <div>
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" strokeWidth="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <input value={defaultValue} onChange={handleChange} data-modal-target="defaultModal" data-modal-toggle="defaultModal" type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required/>
+                <input value={defaultValue} onChange={handleChange} className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required/>
                 <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
             
                 {/* Search Result Container */}
@@ -103,12 +108,18 @@ const SearchBar = <T extends object>({
                                 backgroundColor:
                                     index === focusedIndex ? "rgba(0,0,0,0.1)" : ""
                             }}
-                            className="cursor-pointer p-2 hover:bg-black hover:bg-opacity-10">
+                            className="p-2 hover:bg-black hover:bg-opacity-10 z-10">
                             {renderItem(item)}
                         </div>
                         );
                     })}
+
+                    <div className="bg-gray-300 z-50">
+                        <button  onMouseDown={()=>test()} type="button" >ttttttttttt</button>
+                    </div>
+
                 </div>) }
+
             </div>
             </div>
         </form>

@@ -4,25 +4,27 @@ import Link from 'next/link';
 import Logo from '@/components/icons/Logo';
 import s from './Navbar.module.css';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { AsideContentList } from '@/types';
 import SearchBar from '../SearchBar';
 import { stringify } from 'querystring';
 
 const profiles = [
-  {id: "1", name: "Test1"},
-  {id: "2", name: "Test2"},
-  {id: "3", name: "Test3"},
-
+  {id: "1", name: "Test1", url: "url_1"},
+  {id: "2", name: "Test2", url: "url_2"},
+  {id: "3", name: "Test3", url: "url_3"},
+  {id: "4", name: "Test4", url: "url_4"},
+  {id: "5", name: "Test5", url: "url_5"},
+  {id: "6", name: "Test6", url: "url_6"}
 ]
-
 
 
 const Navbar = ({url_data}:{url_data:AsideContentList}) => {
 
-  const [results, setResults] = useState<{id: string; name: string}[]>();
-  const [selectedProfile, setSeletedProfile] = useState<{id: string; name: string}>();
+  const [results, setResults] = useState<{id: string; name: string, url:string}[]>();
+  const [selectedProfile, setSeletedProfile] = useState<{id: string; name: string, url:string}>();
 
+  const resultContainer = useRef<HTMLDivElement>(null);
 
   type changeHandler = React.ChangeEventHandler<HTMLInputElement>;
   const handleChange: changeHandler = (e) => {
@@ -43,9 +45,29 @@ const Navbar = ({url_data}:{url_data:AsideContentList}) => {
     setShowMenu(!showMenu)
   }
 
-  const setHidden = () => {
-    setShowMenu(false)
+  const handleShowMenu = (event:any) => {
+    if (resultContainer.current){
+      console.log("showmenu")
+      console.log(resultContainer.current)
+      console.log(event.target)
+      setShowMenu(false);
+    }
   }
+
+  // event Target 이해
+  useEffect(() => {
+    function handleClickOutside(event:any) {
+      if (resultContainer.current && !resultContainer.current.contains(event.target)) {
+        setShowMenu(false)
+      }
+    }
+    
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  },[]);
+  
 
   return (
     <>
@@ -69,11 +91,14 @@ const Navbar = ({url_data}:{url_data:AsideContentList}) => {
               </a>
 
               
-              <SearchBar results={results} 
+              <SearchBar 
+              url={'/post'}
+              results={results} 
               onChange={handleChange} 
               onSelect={(item)=>setSeletedProfile(item)}
-              value={selectedProfile?.name}
-              renderItem={(item)=><p>{item.name}</p>}></SearchBar>
+              value={ selectedProfile?.name }
+              value_url = {selectedProfile?.url}
+              renderItem={(item)=><a href={item.url}><p>{item.name}</p></a>}></SearchBar>
               
               
                 <ul className="flex p-4 md:flex md:space-x-8 md:mt-0 md:text-sm md:font-medium">
@@ -93,12 +118,13 @@ const Navbar = ({url_data}:{url_data:AsideContentList}) => {
 
       </nav>
 
-     {/* 이 부분은 나중에 모달로 바꿔야 하는 부분 (nextjs dynamic route, backdrop window 관련해서 확인 필요) */}
-      <div className={`w-fit ${ path === '/' ? ( showMenu ? "absolute block" : "hidden"): ( showMenu ? "absolute block" : "hidden") }`}>
+     { showMenu && (
+      <div onClick={(e)=>handleShowMenu(e)}  ref={resultContainer}
+      className={`w-fit ${ path === '/' ? ( showMenu ? "absolute block" : "hidden"): ( showMenu ? "absolute block" : "hidden") }`}>
       <aside className="p-2 m-2 break-all bg-gray-300" aria-label="Sidebar">
         <div className="h-full pt-4 px-3 pb-4 bg-gray-200 dark:bg-[#0d1117]">
           
-          <Link href='/' onClick={setHidden}>
+          <Link href='/'>
             <h3 className="p-2 text-left text-black dark:text-white"> Home </h3>
           </Link>
 
@@ -108,7 +134,7 @@ const Navbar = ({url_data}:{url_data:AsideContentList}) => {
             url_data.content.length > 0 && url_data.content.map((item)=>{
               return(
                 <div key={item.link_url}>
-                  <Link href={item.link_url} onClick={setHidden}>
+                  <Link href={item.link_url}>
                     <h3 className="p-2 text-sm text-black hover:underline hover:cursor-pointer dark:text-white">
                       {item.name}
                     </h3>
@@ -118,14 +144,15 @@ const Navbar = ({url_data}:{url_data:AsideContentList}) => {
             })
           }
 
-        </div>
+          </div>
 
-        <div className="h-96 pt-4 px-3 pb-4 bg-gray-400 dark:bg-[#0d1117]">
-          <h3 className="p-2 text-left text-black dark:text-white"> AD </h3>
-        </div>
+          <div className="h-96 pt-4 px-3 pb-4 bg-gray-400 dark:bg-[#0d1117]">
+            <h3 className="p-2 text-left text-black dark:text-white"> AD </h3>
+          </div>
 
-      </aside>
-    </div>      
+        </aside>
+      </div>      )
+      }
       </>
   );
 };

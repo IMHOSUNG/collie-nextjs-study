@@ -47,7 +47,7 @@ const Navbar = ({ url_data }: { url_data: AsideContentList }) => {
     if (!target.value.trim()) return setResults([]);
 
     const filterValue = data.filter((data) =>
-      data.name.toLowerCase().startsWith(target.value)
+      data.name.toLowerCase().includes(target.value)
 
     );
     setResults(filterValue)

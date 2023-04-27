@@ -3,6 +3,12 @@
 //https://engineering.linecorp.com/ko/blog/typescript-enum-tree-shaking/
 type SortingCategory = 'recent' | 'popular'
 
+export interface DataType {
+    id: string;
+    name: string;
+    url: string;
+  }
+
 export interface Content {
     uuid:string;
     title:string;

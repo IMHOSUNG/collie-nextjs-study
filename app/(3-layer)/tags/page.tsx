@@ -1,4 +1,4 @@
-const Page = async() => {
+const Page = async () => {
     return (
         <div>
             Tags

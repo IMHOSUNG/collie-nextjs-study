@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-const Page = async({params}:{ params:{question_uuid:string}}) => {
+const Page = async ({ params }: { params: { question_uuid: string } }) => {
 
     return (
         <div className="">

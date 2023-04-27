@@ -3,13 +3,13 @@ import Link from 'next/link'
 import { getQuestionContent } from '@/lib/Question'
 import { QuestionContent } from '@/types'
 
-const Page = async() => {
+const Page = async () => {
 
-    const data:QuestionContent = await getQuestionContent()
+    const data: QuestionContent = await getQuestionContent()
 
     return (
         <div>
-            <QuestionCard data={data}></QuestionCard>            
+            <QuestionCard data={data}></QuestionCard>
         </div>
     )
 }

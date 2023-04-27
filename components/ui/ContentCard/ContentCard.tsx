@@ -7,9 +7,9 @@ const ContentCard = () => {
           className="absolute z-10 invisible inline-block w-64 text-sm font-light transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 text-gray-50 dark:text-gray-50 dark:bg-gray-800 dark:border-gray-600">
           <div className="p-3">
             <div className="flex items-center justify-between mb-2">
-                <div>
-                  <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Follow</button>
-                </div>
+              <div>
+                <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Follow</button>
+              </div>
             </div>
             <p className="text-base font-semibold leading-none text-gray-50 dark:text-white">
               <a href="#">vikaskumarsingh20</a>
@@ -18,7 +18,7 @@ const ContentCard = () => {
               <a href="#" className="hover:underline">@VikasKumarSingh</a>
             </p>
             <p className="mb-4 text-sm font-light">Open-source contributor. Building <a href="#"
-                className="text-blue-600 dark:text-blue-500 hover:underline">flowbite.com</a>.</p>
+              className="text-blue-600 dark:text-blue-500 hover:underline">flowbite.com</a>.</p>
             <ul className="flex text-sm font-light">
               <li className="mr-2">
                 <a href="#" className="hover:underline">
@@ -37,8 +37,8 @@ const ContentCard = () => {
           <div data-popper-arrow></div>
         </div>
         <h3 className="text-sm text-black dark:text-gray-50">
-          <a className="text-black hover:text-blue-400"href="">vikaskumarsingh20</a> 
-            &nbsp; starred 4 repositories · last month
+          <a className="text-black hover:text-blue-400" href="">vikaskumarsingh20</a>
+          &nbsp; starred 4 repositories · last month
         </h3>
       </div>
       <div className="m-2 p-4 rounded border border-gray-700 bg-gray-50 dark:bg-[#0d1117]">

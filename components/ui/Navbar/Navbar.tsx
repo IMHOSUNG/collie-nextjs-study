@@ -46,6 +46,7 @@ const Navbar = ({ url_data }: { url_data: AsideContentList }) => {
 
     if (!target.value.trim()) return setResults([]);
 
+    // 이 쪽에서 패치 데이터?
     const filterValue = data.filter((data) =>
       data.name.toLowerCase().includes(target.value)
 

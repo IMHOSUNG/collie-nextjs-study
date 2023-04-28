@@ -85,8 +85,6 @@ const SearchBar = ({
         })
     }, [focusedIndex])
 
-
-
     useEffect(() => {
         if (results.length > 0 && !showResults) {
             setShowResults(true);
@@ -141,7 +139,6 @@ const SearchBar = ({
                                                     backgroundColor:
                                                         index === focusedIndex ? "rgba(0,0,0,0.1)" : ""
                                                 }}
-
                                                 className="hover:bg-black p-2 hover:bg-opacity-10 z-10">
 
                                                 {renderItem(item)}
